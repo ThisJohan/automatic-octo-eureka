@@ -1,1 +1,31 @@
-<p>list works!</p>
+<h2 style="text-align: center;">Contacts List</h2>
+
+<p-table [value]="contacts" [tableStyle]="{ 'min-width': '50rem' }">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Id</th>
+            <th>Birth Date</th>
+            <th>Email</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Gender</th>
+            <th>Mobile Number</th>
+            <th>Actions</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-contact>
+        <tr>
+            <td>{{ contact.id }}</td>
+            <td>{{ contact.birthDate }}</td>
+            <td>{{ contact.email }}</td>
+            <td>{{ contact.firstName }}</td>
+            <td>{{ contact.lastName }}</td>
+            <td>{{ contact.gender }}</td>
+            <td>{{ contact.mobileNumber }}</td>
+            <td style="display: flex; gap: 8px;">
+                <button pButton type="button" label="Edit" (click)="edit(contact)"></button> <button pButton
+                    type="button" label="Delete" severity="danger" (click)="delete(contact.id)"></button>
+            </td>
+        </tr>
+    </ng-template>
+</p-table>
