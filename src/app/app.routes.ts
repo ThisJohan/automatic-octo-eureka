@@ -4,5 +4,6 @@ import { ListComponent } from './list/list.component';
 
 export const routes: Routes = [
     {path: 'login', component: LoginComponent},
-    {path: 'list', component: ListComponent}
+    {path: 'list', component: ListComponent},
+    {path: '', redirectTo: 'login', pathMatch: 'full'}
 ];

@@ -3,8 +3,6 @@ import { AppService, Contact } from '../app.service';
 import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
 
-
-
 @Component({
   selector: 'app-list',
   standalone: true,
@@ -13,8 +11,9 @@ import { ButtonModule } from 'primeng/button';
   styleUrl: './list.component.css',
 })
 export class ListComponent {
-
   contacts: Contact[] = [];
+
+  isUserAdmin = false;
 
   constructor(private appService: AppService) {}
 
@@ -22,6 +21,7 @@ export class ListComponent {
     this.appService.list().subscribe((v) => {
       this.contacts = v;
     });
+    this.isUserAdmin = this.appService.getUserData().role === 'admin';
   }
 
   edit(contact: Contact) {
@@ -30,5 +30,9 @@ export class ListComponent {
 
   delete(contactId: number) {
     console.log({ contactId });
+  }
+
+  logout() {
+    this.appService.logout();
   }
 }

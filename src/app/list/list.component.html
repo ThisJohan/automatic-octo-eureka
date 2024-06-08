@@ -1,5 +1,11 @@
 <h2 style="text-align: center;">Contacts List</h2>
 
+<div class="contain">
+    <button pButton type="button" label="Add Contact"></button>
+    <button [disabled]="!isUserAdmin" pButton type="button" label="Add User"></button>
+    <button [disabled]="!isUserAdmin" pButton type="button" severity="danger" (click)="logout()" label="Logout"></button>
+</div>
+
 <p-table [value]="contacts" [tableStyle]="{ 'min-width': '50rem' }">
     <ng-template pTemplate="header">
         <tr>
