@@ -1,0 +1,14 @@
+<h2>Login to Account</h2>
+
+<div class="contain">
+    <p-floatLabel>
+        <input pInputText id="username" [(ngModel)]="data.username" />
+        <label for="username">Username</label>
+    </p-floatLabel>
+    <p-floatLabel>
+        <input pInputText id="password" [(ngModel)]="data.password" type="password" />
+        <label for="password">Password</label>
+    </p-floatLabel>
+
+    <p-button label="Login" (onClick)="login()" />
+</div>

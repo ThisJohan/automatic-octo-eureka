@@ -57,12 +57,14 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+          },
           "configurations": {
             "production": {
               "buildTarget": "ContactView:build:production"
             },
             "development": {
-              "buildTarget": "ContactView:build:development"
+              "buildTarget": "ContactView:build:development",
             }
           },
           "defaultConfiguration": "development"
